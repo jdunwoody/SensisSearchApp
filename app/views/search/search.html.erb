@@ -1,0 +1,16 @@
+<h1>Search#search</h1>
+
+<p>Term: <%= @term %> </p>
+<p>Addr: <%= @location %> </p>
+<p>
+
+    <em>Total results found:</em> <%= @results["totalResults"] %>
+    <% @results["results"].each do |r| %>
+    <li>
+        <%= r["name"] %>  <%= r["primaryAddress"]["addressLine"] %>
+    </li>
+<% end %>
+<ol>
+
+</ol>
+</p>
