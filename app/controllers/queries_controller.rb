@@ -1,3 +1,7 @@
+require 'search_command'
+
+
+
 class QueriesController < ApplicationController
   # GET /queries
   # GET /queries.xml
@@ -14,8 +18,9 @@ class QueriesController < ApplicationController
   # GET /queries/1.xml
   def show
     @query = Query.find(params[:id])
+    @location = "vic"
 
-    result = @query.execute
+    @results = perform_search(@query.query, @location)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -82,4 +87,5 @@ class QueriesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
 end

@@ -11,5 +11,17 @@
 </p>
 
 
+<p>Term: <%= @query.query %> </p>
+<p>Addr: <%= @location %> </p>
+<p>
+
+    <em>Total results found:</em> <%= @results["totalResults"] %>
+    <% @results["results"].each do |r| %>
+    <li>
+        <%= r["name"] %>  <%= r["primaryAddress"]["addressLine"] %>
+    </li>
+<% end %>
+<ol>
+	
 <%= link_to 'Edit', edit_query_path(@query) %> |
 <%= link_to 'Back', queries_path %>
