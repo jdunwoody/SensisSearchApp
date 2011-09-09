@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110908114122) do
+ActiveRecord::Schema.define(:version => 20110909132738) do
 
   create_table "queries", :force => true do |t|
     t.string   "name"
     t.string   "query"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "location"
   end
 
   create_table "searches", :force => true do |t|
